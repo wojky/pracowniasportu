@@ -25,7 +25,8 @@ export class AppTitleStrategy extends TitleStrategy {
 
     const pageTitle = article?.title ?? routeTitle;
     const fullTitle = pageTitle ? `${pageTitle} | ${SITE_NAME}` : SITE_NAME;
-    const description = article?.excerpt ?? (data['description'] as string | undefined) ?? DEFAULT_DESCRIPTION;
+    const description =
+      article?.excerpt ?? (data['description'] as string | undefined) ?? DEFAULT_DESCRIPTION;
     const image = article?.image ?? (data['ogImage'] as string | undefined) ?? DEFAULT_IMAGE;
 
     this.titleService.setTitle(fullTitle);

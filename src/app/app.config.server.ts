@@ -1,6 +1,12 @@
 import { mergeApplicationConfig, ApplicationConfig } from '@angular/core';
 import { provideServerRendering, withRoutes } from '@angular/ssr';
-import { provideHttpClient, withFetch, withInterceptors, HttpInterceptorFn, HttpResponse } from '@angular/common/http';
+import {
+  provideHttpClient,
+  withFetch,
+  withInterceptors,
+  HttpInterceptorFn,
+  HttpResponse,
+} from '@angular/common/http';
 import { of } from 'rxjs';
 import { readFileSync } from 'node:fs';
 import { join } from 'node:path';
@@ -26,7 +32,7 @@ const serverConfig: ApplicationConfig = {
   providers: [
     provideServerRendering(withRoutes(serverRoutes)),
     provideHttpClient(withFetch(), withInterceptors([staticFilesInterceptor])),
-  ]
+  ],
 };
 
 export const config = mergeApplicationConfig(appConfig, serverConfig);

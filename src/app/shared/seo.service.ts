@@ -16,8 +16,7 @@ export class SeoService {
   private readonly meta = inject(Meta);
 
   setPage(options: SeoOptions): void {
-    const fullTitle =
-      options.title === SITE_NAME ? SITE_NAME : `${options.title} | ${SITE_NAME}`;
+    const fullTitle = options.title === SITE_NAME ? SITE_NAME : `${options.title} | ${SITE_NAME}`;
 
     this.title.setTitle(fullTitle);
     this.meta.updateTag({ property: 'og:title', content: fullTitle });
