@@ -1,6 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { inject, Injectable } from '@angular/core';
-import { DOCUMENT } from '@angular/common';
+import { PlatformLocation } from '@angular/common';
 import { marked } from 'marked';
 import { map, shareReplay, switchMap } from 'rxjs/operators';
 import { Observable } from 'rxjs';
@@ -9,8 +9,7 @@ import type { NewsArticle, NewsArticleMeta } from './news.model';
 @Injectable({ providedIn: 'root' })
 export class NewsService {
   private readonly http = inject(HttpClient);
-  private readonly baseHref = inject(DOCUMENT).querySelector('base')?.getAttribute('href') ?? '/';
-  private readonly base = `${this.baseHref}news`;
+  private readonly base = inject(PlatformLocation).getBaseHrefFromDOM() + 'news';
 
   private readonly manifest$: Observable<NewsArticleMeta[]> = this.http
     .get<NewsArticleMeta[]>(`${this.base}/manifest.json`)

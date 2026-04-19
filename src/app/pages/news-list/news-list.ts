@@ -21,7 +21,10 @@ import { LocalDatePipe } from '../../shared/local-date.pipe';
               <li
                 class="rounded-xl border border-gray-200 bg-white shadow-sm transition hover:shadow-md overflow-hidden"
               >
-                <a [routerLink]="['/aktualnosci', article.slug]" class="group flex flex-col sm:flex-row">
+                <a
+                  [routerLink]="['/aktualnosci', article.slug]"
+                  class="group flex flex-col sm:flex-row"
+                >
                   @if (article.image) {
                     <div class="relative sm:hidden h-48 shrink-0">
                       <img
@@ -30,9 +33,14 @@ import { LocalDatePipe } from '../../shared/local-date.pipe';
                         class="h-full w-full object-cover"
                       />
                       @if (article.tags.length > 0) {
-                        <ul class="absolute bottom-2 left-2 flex flex-wrap gap-1.5" aria-label="Tagi">
+                        <ul
+                          class="absolute bottom-2 left-2 flex flex-wrap gap-1.5"
+                          aria-label="Tagi"
+                        >
                           @for (tag of article.tags; track tag) {
-                            <li class="rounded-full bg-black/50 px-2.5 py-0.5 text-xs font-medium text-white backdrop-blur-sm">
+                            <li
+                              class="rounded-full bg-black/50 px-2.5 py-0.5 text-xs font-medium text-white backdrop-blur-sm"
+                            >
                               {{ tag }}
                             </li>
                           }
@@ -58,7 +66,9 @@ import { LocalDatePipe } from '../../shared/local-date.pipe';
                     @if (article.tags.length > 0) {
                       <ul class="mt-3 hidden sm:flex flex-wrap gap-2" aria-label="Tagi">
                         @for (tag of article.tags; track tag) {
-                          <li class="rounded-full bg-brand-blue/10 px-3 py-0.5 text-xs font-medium text-brand-blue">
+                          <li
+                            class="rounded-full bg-brand-blue/10 px-3 py-0.5 text-xs font-medium text-brand-blue"
+                          >
                             {{ tag }}
                           </li>
                         }
