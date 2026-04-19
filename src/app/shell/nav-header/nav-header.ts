@@ -1,6 +1,6 @@
 import { ChangeDetectionStrategy, Component, ElementRef, inject, signal } from '@angular/core';
 import { RouterLink, RouterLinkActive } from '@angular/router';
-import { NgOptimizedImage } from '@angular/common';
+import { APP_BASE_HREF, NgOptimizedImage } from '@angular/common';
 import { Button } from '../../ui/button/button';
 
 @Component({
@@ -16,6 +16,8 @@ import { Button } from '../../ui/button/button';
 })
 export class NavHeader {
   private readonly el = inject(ElementRef);
+  private readonly baseHref = inject(APP_BASE_HREF, { optional: true }) ?? '/';
+  protected readonly logoSrc = this.baseHref + 'logo.jpg';
   protected readonly menuOpen = signal(false);
 
   protected toggleMenu(): void {
