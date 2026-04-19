@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32">
+  <!-- niebieska -->
+  <circle cx="7" cy="16" r="9" fill="#1a5baa"/>
+  <!-- szara -->
+  <circle cx="16" cy="16" r="9" fill="#c5c6c7"/>
+  <!-- czerwona -->
+  <circle cx="25" cy="16" r="9" fill="#cc2436"/>
+</svg>
