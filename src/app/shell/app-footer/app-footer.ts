@@ -1,6 +1,6 @@
-import { ChangeDetectionStrategy, Component } from '@angular/core';
+import { ChangeDetectionStrategy, Component, inject } from '@angular/core';
 import { RouterLink } from '@angular/router';
-import { NgOptimizedImage } from '@angular/common';
+import { NgOptimizedImage, PlatformLocation } from '@angular/common';
 
 @Component({
   selector: 'app-footer',
@@ -11,4 +11,5 @@ import { NgOptimizedImage } from '@angular/common';
 })
 export class AppFooter {
   protected readonly currentYear = new Date().getFullYear();
+  protected readonly logoSrc = inject(PlatformLocation).getBaseHrefFromDOM() + 'logo.jpg';
 }
