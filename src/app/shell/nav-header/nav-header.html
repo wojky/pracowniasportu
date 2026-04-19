@@ -1,0 +1,120 @@
+<header class="sticky top-0 z-50 bg-white shadow-sm">
+  <div class="mx-auto flex max-w-7xl items-center justify-between gap-4 px-4 py-3 sm:px-6 lg:px-8">
+    <!-- Logo -->
+    <a routerLink="/" aria-label="Strona główna Pracowni Sportu" class="shrink-0">
+      <img
+        ngSrc="/logo.jpg"
+        alt="Logo Pracowni Sportu"
+        width="120"
+        height="48"
+        priority
+        class="h-12 w-auto"
+      />
+    </a>
+
+    <!-- Desktop nav -->
+    <nav aria-label="Nawigacja główna" class="hidden md:flex md:items-center md:gap-6">
+      <a
+        routerLink="/o-nas"
+        routerLinkActive="text-brand-blue font-semibold"
+        class="text-sm font-medium text-gray-700 transition-colors hover:text-brand-blue"
+      >
+        O nas
+      </a>
+      <a
+        routerLink="/projekty"
+        routerLinkActive="text-brand-blue font-semibold"
+        class="text-sm font-medium text-gray-700 transition-colors hover:text-brand-blue"
+      >
+        Projekty
+      </a>
+      <a
+        routerLink="/wspolpraca"
+        routerLinkActive="text-brand-blue font-semibold"
+        class="text-sm font-medium text-gray-700 transition-colors hover:text-brand-blue"
+      >
+        Współpraca
+      </a>
+      <a
+        routerLink="/aktualnosci"
+        routerLinkActive="text-brand-blue font-semibold"
+        class="text-sm font-medium text-gray-700 transition-colors hover:text-brand-blue"
+      >
+        Aktualności
+      </a>
+    </nav>
+
+    <div class="hidden md:block">
+      <app-button variant="secondary" routerLink="/wesprzyj">Wesprzyj nas</app-button>
+    </div>
+
+    <!-- Mobile hamburger -->
+    <button
+      type="button"
+      class="inline-flex items-center justify-center rounded-md p-2 text-gray-600 hover:bg-gray-100 focus-visible:outline-2 focus-visible:outline-brand-blue md:hidden"
+      [attr.aria-expanded]="menuOpen()"
+      aria-controls="mobile-menu"
+      [attr.aria-label]="menuOpen() ? 'Zamknij menu' : 'Otwórz menu'"
+      (click)="toggleMenu()"
+    >
+      <span class="hamburger" [class.is-open]="menuOpen()" aria-hidden="true">
+        <span class="bar bar-top"></span>
+        <span class="bar bar-mid"></span>
+        <span class="bar bar-bot"></span>
+      </span>
+    </button>
+  </div>
+
+  <!-- Mobile menu — absolute overlay, does not push content -->
+  @if (menuOpen()) {
+    <div
+      id="mobile-menu"
+      class="absolute inset-x-0 top-full border-t border-gray-100 bg-white shadow-lg md:hidden"
+    >
+      <nav aria-label="Nawigacja mobilna" class="flex flex-col px-4 py-3 gap-1">
+        <a
+          routerLink="/o-nas"
+          routerLinkActive="text-brand-blue font-semibold bg-brand-blue/5"
+          class="rounded-md px-3 py-2 text-sm font-medium text-gray-700 hover:bg-gray-50 hover:text-brand-blue"
+          (click)="closeMenu()"
+        >
+          O nas
+        </a>
+        <a
+          routerLink="/projekty"
+          routerLinkActive="text-brand-blue font-semibold bg-brand-blue/5"
+          class="rounded-md px-3 py-2 text-sm font-medium text-gray-700 hover:bg-gray-50 hover:text-brand-blue"
+          (click)="closeMenu()"
+        >
+          Projekty
+        </a>
+        <a
+          routerLink="/wspolpraca"
+          routerLinkActive="text-brand-blue font-semibold bg-brand-blue/5"
+          class="rounded-md px-3 py-2 text-sm font-medium text-gray-700 hover:bg-gray-50 hover:text-brand-blue"
+          (click)="closeMenu()"
+        >
+          Współpraca
+        </a>
+        <a
+          routerLink="/aktualnosci"
+          routerLinkActive="text-brand-blue font-semibold bg-brand-blue/5"
+          class="rounded-md px-3 py-2 text-sm font-medium text-gray-700 hover:bg-gray-50 hover:text-brand-blue"
+          (click)="closeMenu()"
+        >
+          Aktualności
+        </a>
+        <div class="pt-2">
+          <app-button
+            variant="secondary"
+            class="w-full"
+            routerLink="/wesprzyj"
+            (click)="closeMenu()"
+          >
+            Wesprzyj nas
+          </app-button>
+        </div>
+      </nav>
+    </div>
+  }
+</header>

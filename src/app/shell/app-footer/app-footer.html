@@ -1,0 +1,53 @@
+<footer class="bg-gray-900 text-gray-300">
+  <div class="mx-auto max-w-7xl px-4 py-12 sm:px-6 lg:px-8">
+    <div class="grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
+      <!-- Brand column -->
+      <div class="flex flex-col gap-4">
+        <div class="inline-flex w-fit rounded-md bg-white px-3 py-2">
+          <img
+            ngSrc="/logo.jpg"
+            alt="Logo Pracowni Sportu"
+            width="120"
+            height="48"
+            class="h-10 w-auto"
+          />
+        </div>
+        <p class="text-sm leading-relaxed">
+          Fundacja działająca na rzecz rozwoju sportu i aktywności fizycznej w społeczności
+          lokalnej.
+        </p>
+      </div>
+
+      <!-- Links column -->
+      <div>
+        <h2 class="mb-4 text-sm font-semibold uppercase tracking-wider text-white">Nawigacja</h2>
+        <ul class="flex flex-col gap-2 text-sm">
+          <li><a routerLink="/o-nas" class="hover:text-white transition-colors">O nas</a></li>
+          <li><a routerLink="/projekty" class="hover:text-white transition-colors">Projekty</a></li>
+          <li>
+            <a routerLink="/wspolpraca" class="hover:text-white transition-colors">Współpraca</a>
+          </li>
+          <li>
+            <a routerLink="/wesprzyj" class="hover:text-white transition-colors">Wesprzyj nas</a>
+          </li>
+        </ul>
+      </div>
+
+      <!-- Contact column -->
+      <div>
+        <h2 class="mb-4 text-sm font-semibold uppercase tracking-wider text-white">Kontakt</h2>
+        <ul class="flex flex-col gap-2 text-sm">
+          <li>
+            <a href="mailto:kontakt@pracowniasportu.pl" class="hover:text-white transition-colors">
+              kontakt&#64;pracowniasportu.pl
+            </a>
+          </li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="mt-10 border-t border-gray-700 pt-6 text-center text-xs text-gray-500">
+      &copy; {{ currentYear }} Pracownia Sportu. Wszelkie prawa zastrzeżone.
+    </div>
+  </div>
+</footer>

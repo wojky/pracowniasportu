@@ -1,0 +1,57 @@
+/*
+ * Icons use the CSS mask technique:
+ * The SVG is applied as a mask over a currentColor background.
+ * This means icons automatically inherit the text color of their context.
+ *
+ * Usage:
+ *   <span class="icon icon-home"></span>
+ *   <span class="icon icon-phone text-brand-blue"></span>
+ */
+
+.icon {
+  display: inline-block;
+  flex-shrink: 0;
+  width: 1em;
+  height: 1em;
+  background-color: currentColor;
+  mask-size: contain;
+  mask-repeat: no-repeat;
+  mask-position: center;
+}
+
+.icon-home {
+  mask-image: url('./home.svg');
+}
+.icon-menu {
+  mask-image: url('./menu.svg');
+}
+.icon-close {
+  mask-image: url('./close.svg');
+}
+.icon-chevron-down {
+  mask-image: url('./chevron-down.svg');
+}
+.icon-chevron-right {
+  mask-image: url('./chevron-right.svg');
+}
+.icon-phone {
+  mask-image: url('./phone.svg');
+}
+.icon-mail {
+  mask-image: url('./mail.svg');
+}
+.icon-location {
+  mask-image: url('./location.svg');
+}
+.icon-user {
+  mask-image: url('./user.svg');
+}
+.icon-calendar {
+  mask-image: url('./calendar.svg');
+}
+.icon-check {
+  mask-image: url('./check.svg');
+}
+.icon-arrow-right {
+  mask-image: url('./arrow-right.svg');
+}
